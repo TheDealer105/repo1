@@ -40,9 +40,10 @@
             <dxg:GridControl ItemsSource="{Binding Customers}"
                              AutoGenerateColumns="AddNew"
                              SelectionMode="Row"
-                             SelectedItem="{Binding CustomerSelectedItem}">
+                             SelectedItem="{Binding CustomerSelectedItem}"
+                             >
                 <dxg:GridControl.View>
-                    <dxg:TableView ShowGroupPanel="False"/>
+                    <dxg:TableView ShowGroupPanel="False" AllowEditing="False"/>
                 </dxg:GridControl.View>
             </dxg:GridControl>
         </dxlc:LayoutGroup>
