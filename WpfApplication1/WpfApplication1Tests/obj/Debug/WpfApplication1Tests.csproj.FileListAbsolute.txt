@@ -1,0 +1,11 @@
+C:\Users\twojtyczka\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1Tests\bin\Debug\WpfApplication1Tests.dll
+C:\Users\twojtyczka\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1Tests\bin\Debug\WpfApplication1Tests.pdb
+C:\Users\twojtyczka\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\twojtyczka\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1Tests\bin\Debug\WpfApplication1.exe
+C:\Users\twojtyczka\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1Tests\bin\Debug\DevExpress.Mvvm.dll
+C:\Users\twojtyczka\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1Tests\bin\Debug\WpfApplication1.pdb
+C:\Users\twojtyczka\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\twojtyczka\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1Tests\bin\Debug\DevExpress.Mvvm.pdb
+C:\Users\twojtyczka\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1Tests\obj\Debug\WpfApplication1Tests.csprojResolveAssemblyReference.cache
+C:\Users\twojtyczka\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1Tests\obj\Debug\WpfApplication1Tests.dll
+C:\Users\twojtyczka\Documents\Visual Studio 2015\Projects\WpfApplication1\WpfApplication1Tests\obj\Debug\WpfApplication1Tests.pdb

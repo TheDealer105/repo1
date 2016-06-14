@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "WpfApplication1\WpfApplication1.csproj", "{E50A60C7-33D8-4580-A6A4-1B49BC0971F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1Tests1", "WpfApplication1Tests1\WpfApplication1Tests1.csproj", "{92A5A008-1998-48E5-A72C-AAF8AF59C287}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E50A60C7-33D8-4580-A6A4-1B49BC0971F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E50A60C7-33D8-4580-A6A4-1B49BC0971F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E50A60C7-33D8-4580-A6A4-1B49BC0971F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E50A60C7-33D8-4580-A6A4-1B49BC0971F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A5A008-1998-48E5-A72C-AAF8AF59C287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A5A008-1998-48E5-A72C-AAF8AF59C287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A5A008-1998-48E5-A72C-AAF8AF59C287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A5A008-1998-48E5-A72C-AAF8AF59C287}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

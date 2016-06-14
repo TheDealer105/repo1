@@ -1,0 +1,45 @@
+﻿<Window x:Class="WpfApplication1.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        xmlns:viewModel="clr-namespace:WpfApplication1.ViewModel"
+        DataContext="{dxmvvm:ViewModelSource Type={x:Type viewModel:MainViewModel}}">
+    <Window.Resources>
+        <Style x:Key="MyStyle" TargetType="Button">
+            <Setter Property="Background" Value="DarkKhaki"></Setter>
+            <Setter Property="FontStyle" Value="Italic"></Setter>
+        </Style>
+        <Style x:Key="MyDerivedStyle" TargetType="Button" BasedOn="{StaticResource MyStyle}">
+            <Setter Property="Content" Value="ButtonDerivedContent"></Setter>
+            <Setter Property="FontStyle" Value="Normal"></Setter>
+        </Style>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <dx:SimpleButton Content="Increment" Command="{Binding IncrementCommand}" Grid.Row="0"></dx:SimpleButton>
+        <dx:SimpleButton Content="Decrement" Command="{Binding DecrementCommand}" Grid.Row="2"></dx:SimpleButton>
+        
+        <dxe:TextEdit IsReadOnly="True" Grid.Row="1" Grid.Column="2" EditValue="{Binding Value}"></dxe:TextEdit>
+        
+        
+    </Grid>
+</Window>
