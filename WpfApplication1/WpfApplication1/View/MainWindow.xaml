@@ -34,7 +34,7 @@
                 </dxg:GridControl.View>
             </dxg:GridControl>
         </dxlc:LayoutGroup>
-        <dxlc:LayoutGroup>
+        <dxlc:LayoutGroup VerticalAlignment="Bottom">
             <dx:SimpleButton Content="Add"></dx:SimpleButton>
             <dx:SimpleButton Content="Delete"></dx:SimpleButton>
             <dx:SimpleButton Content="Modify"></dx:SimpleButton>

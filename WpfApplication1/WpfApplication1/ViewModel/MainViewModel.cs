@@ -1,41 +1,85 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
+using WpfApplication1.Model;
 
 namespace WpfApplication1.ViewModel
 {
     [POCOViewModel]
     public class MainViewModel
     {
+        public MainViewModel()
+        {
+            InitData();
+        }
+
         public static MainViewModel Create()
         {
             return ViewModelSource.Create(() => new MainViewModel());
         }
 
-        public virtual int Value { get; set; }
+        public virtual ObservableCollection<Customer> Customers { get; set; }
 
-        public virtual void Increment()
+        public virtual Customer CustomerSelectedItem { get; set; }
+
+        public virtual void Add()
         {
-            Value += 1;
+            
         }
 
-        public virtual bool CanIncrement()
+        public virtual bool CanAdd()
         {
-            return Value < 10 ? true : false;
+            return true;
         }
 
-        public virtual void Decrement()
+        public virtual void Delete()
         {
-            Value -= 1;
+            Customers.Remove(CustomerSelectedItem);
         }
 
-        public virtual bool CanDecrement()
+        public virtual bool CanDelete()
         {
-            return Value > -10 ? true : false;
+            if (CustomerSelectedItem != null)
+                return true;
+            else
+                return false;
+        }
+
+        public virtual void Modify()
+        {
+
+        }
+
+        public virtual bool CanModify()
+        {
+            if (CustomerSelectedItem != null)
+                return true;
+            else
+                return false;
+        }
+
+        private void InitData()
+        {
+            Customers = new ObservableCollection<Customer>()
+            {
+                new Customer()
+                {
+                    Name = "Jan",
+                    Surname = "Kowalski",
+                    Adress = "Wybickiego 16",
+                    City = "Warszawa",
+                    DateOfBirth = new DateTime(1980, 11, 06),
+                    Email = "jan.kowalski@gmail.com",
+                    PhoneNumber = "895647482",
+                    PostalCode = "02-785",
+                    Value = 100
+                }
+            };
         }
     }
 }
