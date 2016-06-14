@@ -8,12 +8,21 @@
         xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
-        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
+        Title="MainWindow"
         xmlns:viewModel="clr-namespace:WpfApplication1.ViewModel"
         DataContext="{dxmvvm:ViewModelSource Type={x:Type viewModel:MainViewModel}}">
+
+    <dxmvvm:Interaction.Behaviors>
+        <dx:DialogService x:Name="DialogService">
+            <dx:DialogService.DialogStyle>
+                <Style TargetType="dx:DXDialogWindow">
+                    <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+                </Style>
+            </dx:DialogService.DialogStyle>
+        </dx:DialogService>
+    </dxmvvm:Interaction.Behaviors>
     <Window.Resources>
         <Style x:Key="MyStyle" TargetType="Button">
             <Setter Property="Background" Value="DarkKhaki"></Setter>
@@ -28,16 +37,19 @@
     
     <dxlc:LayoutControl Orientation="Vertical">
         <dxlc:LayoutGroup>
-            <dxg:GridControl>
+            <dxg:GridControl ItemsSource="{Binding Customers}"
+                             AutoGenerateColumns="AddNew"
+                             SelectionMode="Row"
+                             SelectedItem="{Binding CustomerSelectedItem}">
                 <dxg:GridControl.View>
                     <dxg:TableView ShowGroupPanel="False"/>
                 </dxg:GridControl.View>
             </dxg:GridControl>
         </dxlc:LayoutGroup>
         <dxlc:LayoutGroup VerticalAlignment="Bottom">
-            <dx:SimpleButton Content="Add"></dx:SimpleButton>
-            <dx:SimpleButton Content="Delete"></dx:SimpleButton>
-            <dx:SimpleButton Content="Modify"></dx:SimpleButton>
+            <dx:SimpleButton Content="Add" Command="{Binding AddCommand}" Style="{StaticResource MyDerivedStyle}"></dx:SimpleButton>
+            <dx:SimpleButton Content="Delete" Command="{Binding DeleteCommand}" Style="{StaticResource MyDerivedStyle}"></dx:SimpleButton>
+            <dx:SimpleButton Content="Modify" Command="{Binding ModifyCommand}" Style="{StaticResource MyDerivedStyle}"></dx:SimpleButton>
         </dxlc:LayoutGroup>
     </dxlc:LayoutControl>
 </Window>

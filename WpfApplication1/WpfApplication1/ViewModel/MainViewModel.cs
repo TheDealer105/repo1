@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
 using WpfApplication1.Model;
+using DevExpress.Mvvm;
+using System.Windows;
 
 namespace WpfApplication1.ViewModel
 {
@@ -23,13 +26,20 @@ namespace WpfApplication1.ViewModel
             return ViewModelSource.Create(() => new MainViewModel());
         }
 
+        protected virtual IDialogService DialogService { get { return null; } }
+
         public virtual ObservableCollection<Customer> Customers { get; set; }
 
         public virtual Customer CustomerSelectedItem { get; set; }
 
         public virtual void Add()
         {
-            
+            Customer newCustomer = new Customer();
+            EditCustomerViewModel viewModel = EditCustomerViewModel.Create();
+            if (viewModel.ShowDialog(DialogService, newCustomer) == viewModel.OkCommand)
+            {
+                Customers.Add(newCustomer);
+            }
         }
 
         public virtual bool CanAdd()
@@ -52,7 +62,11 @@ namespace WpfApplication1.ViewModel
 
         public virtual void Modify()
         {
+            EditCustomerViewModel viewModel = ViewModelSource.Create(() => new EditCustomerViewModel());
+            if (viewModel.ShowDialog(DialogService, CustomerSelectedItem) == viewModel.OkCommand)
+            {
 
+            }
         }
 
         public virtual bool CanModify()

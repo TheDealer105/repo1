@@ -17,7 +17,7 @@ namespace WpfApplication1.Model
 
         public string Surname { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
 
         public string Adress { get; set; }
 
