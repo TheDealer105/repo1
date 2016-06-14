@@ -8,6 +8,7 @@
         xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
@@ -24,22 +25,19 @@
         </Style>
         
     </Window.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="20"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
-            <ColumnDefinition Width="10"></ColumnDefinition>
-            <ColumnDefinition Width="200"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <dx:SimpleButton Content="Increment" Command="{Binding IncrementCommand}" Grid.Row="0"></dx:SimpleButton>
-        <dx:SimpleButton Content="Decrement" Command="{Binding DecrementCommand}" Grid.Row="2"></dx:SimpleButton>
-        
-        <dxe:TextEdit IsReadOnly="True" Grid.Row="1" Grid.Column="2" EditValue="{Binding Value}"></dxe:TextEdit>
-        
-        
-    </Grid>
+    
+    <dxlc:LayoutControl Orientation="Vertical">
+        <dxlc:LayoutGroup>
+            <dxg:GridControl>
+                <dxg:GridControl.View>
+                    <dxg:TableView ShowGroupPanel="False"/>
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </dxlc:LayoutGroup>
+        <dxlc:LayoutGroup>
+            <dx:SimpleButton Content="Add"></dx:SimpleButton>
+            <dx:SimpleButton Content="Delete"></dx:SimpleButton>
+            <dx:SimpleButton Content="Modify"></dx:SimpleButton>
+        </dxlc:LayoutGroup>
+    </dxlc:LayoutControl>
 </Window>
